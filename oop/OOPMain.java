@@ -28,6 +28,7 @@ public class OOPMain {
                 physics.getKineticEnergy(mass, velocity);
             } else {
                 System.out.println("B SELECTED");
+
             }
 
         } catch (InputMismatchException ime) {
