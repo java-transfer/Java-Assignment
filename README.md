@@ -12,4 +12,4 @@ BHU/22/04/09/0091
 
 ### Description
 
-A Java console program to calculate kinetic energy of objects given thier and
+A Java console program to calculate kinetic energy of objects given it mass (in grams) and velociy (in m/s).
