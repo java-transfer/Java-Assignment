@@ -6,4 +6,5 @@ public class Physics extends Functions {
         System.out.print(divide(mass, 2) * powTwo(velocity));
         System.out.print(" m/s squared");
     }
+
 }
