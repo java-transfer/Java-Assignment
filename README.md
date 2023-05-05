@@ -1,15 +1,17 @@
 ### Java OOP Class Work
 
-#### 4th May, 2023
+**4th May, 2023.**
 
-#### D.E Students group
+#### Contributors
 
 Jesse Moses Kwagga
-HHU/22/04/09/0090
+BHU/22/04/09/0090
 
-Favour Chharles Bassey
+Favour Charles Bassey
 BHU/22/04/09/0091
 
-### Description
+### Project Brief
 
-A Java console program to calculate kinetic energy of objects given it mass (in grams) and velociy (in m/s).
+A Java console program to perfom the following:
+
+- Calculate kinetic energy of objects given it mass (in grams) and velociy (in m/s).
