@@ -12,4 +12,5 @@ Favour Charles Bassey - BHU/22/04/09/0091
 
 A Java console program to perfom the following:
 
-- Calculate kinetic energy of objects given it mass (in grams) and velociy (in m/s).
+- Calculate kinetic energy of objects given it mass (in grams) and velocity (in m/s).
+- Calculate potential energy of objects given its mass (in grams) and height(in meters) while acceleration due to gravity remains constant(g=10m/s^2)
