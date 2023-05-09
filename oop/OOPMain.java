@@ -26,10 +26,16 @@ public class OOPMain {
                 float velocity = input.nextFloat();
 
                 physics.getKineticEnergy(mass, velocity);
-            } else {
-                System.out.println("B SELECTED");
+            } else if (operation == 'B') {
+                System.out.print(" Enter mass of object (g):");
+                float mass = input.nextFloat();
 
+                System.out.print("Enter height of object (m):");
+                float height = input.nextFloat();
+
+                physics.getPotentialEnergy(mass, height);
             }
+
 
         } catch (InputMismatchException ime) {
             System.out.println("Invalid input.");

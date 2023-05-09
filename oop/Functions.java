@@ -13,4 +13,10 @@ public class Functions {
     float powTwo(float number) {
         return number * number;
     }
+
+    float multiplyThree(float numberOne, float numberTwo, float numberThree) {
+        return numberOne * numberTwo * numberThree;
+    }
+
+
 }
