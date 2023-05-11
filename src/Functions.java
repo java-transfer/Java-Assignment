@@ -1,4 +1,4 @@
-package oop;
+package src;
 
 public class Functions {
 
@@ -17,6 +17,5 @@ public class Functions {
     float multiplyThree(float numberOne, float numberTwo, float numberThree) {
         return numberOne * numberTwo * numberThree;
     }
-
 
 }
