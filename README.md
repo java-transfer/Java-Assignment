@@ -8,6 +8,11 @@ Jesse Moses Kwagga - BHU/22/04/09/0090
 
 Favour Charles Bassey - BHU/22/04/09/0091
 
+Daniel Precious Owlama- BHU/22/04/09/0070
+
+ Adewale Oreoluwa Oluwabusayomi- BHU/22/04/05/0121
+
+
 ### Project Brief
 
 A Java console program to perfom the following:
