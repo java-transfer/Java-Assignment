@@ -7,9 +7,9 @@ public class Physics extends Functions {
         return result;
     }
 
-    void getPotentialEnergy(float mass, float height) {
-        System.out.print(multiply(mass, 10) * height);
-        System.out.print(" Joules");
+    Float getPotentialEnergy(float mass, float height) {
+       Float result = multiply(mass, 10) * height;
+        return result;
     }
 
 }

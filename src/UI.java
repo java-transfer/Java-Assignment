@@ -47,6 +47,9 @@ public class UI extends Physics {
     // Kinetic page components
     final JPanel kineticPanel = new JPanel();
 
+    // Potential page components
+    final JPanel potentialPanel = new JPanel();
+
     // Result page components
     final JPanel resultPanel = new JPanel();
 
@@ -70,6 +73,12 @@ public class UI extends Physics {
             }
         });
 
+        potentialBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PotentialUI();
+            }
+        });
+
         // Add components to mainOptionsPanel
         mainOptionPanel.add(kineticBtn);
         mainOptionPanel.add(potentialBtn);
@@ -79,7 +88,7 @@ public class UI extends Physics {
         mainFrame.add(pageHeading);
         mainFrame.add(mainOptionPanel);
 
-        // Set mainFrame prefferrences
+        // Set mainFrame prefferences
         mainFrame.setPreferredSize(new Dimension(500, 200));
         mainFrame.pack();
         mainFrame.setResizable(false);
@@ -90,6 +99,7 @@ public class UI extends Physics {
 
     // Display Kinetic page
     public void KineticUI() {
+
         // Hide mainOptionPanel & set new heading
         mainOptionPanel.setVisible(false);
 
@@ -115,13 +125,12 @@ public class UI extends Physics {
 
                 String velocityString = secondValue.getText();
                 Float velocity = Float.parseFloat(velocityString);
+
                 Float result = physics.getKineticEnergy(mass, velocity);
 
                 ResultUI(result, "kinetic");
             }
         });
-
-        kineticPanel.setLayout(new FlowLayout());
 
         // Add components to kineticPanel
         kineticPanel.add(firstValueLabel);
@@ -141,6 +150,59 @@ public class UI extends Physics {
         kineticPanel.setVisible(true);
     }
 
+    public void PotentialUI() {
+
+        // Hide mainOptionPanel & set new heading
+        mainOptionPanel.setVisible(false);
+
+        pageHeading.setText("Please provide values:");
+
+        // Define components (3 textField & 1 Button)
+        firstValueLabel = new JLabel("Mass (g)");
+        firstValue = new JTextField("", 3);
+        firstValue.setPreferredSize(new Dimension(5, 25));
+
+        secondValueLabel = new JLabel("Height (m)");
+        secondValue = new JTextField("", 3);
+        secondValue.setPreferredSize(new Dimension(5, 25));
+
+        calculateBtn = new JButton("CALCULATE");
+        calculateBtn.setPreferredSize(new Dimension(120, 25));
+
+        // Perform calculation
+        calculateBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String massString = firstValue.getText();
+                Float mass = Float.parseFloat(massString);
+
+                String velocityString = secondValue.getText();
+                Float velocity = Float.parseFloat(velocityString);
+                Float result = physics.getPotentialEnergy(mass, velocity);
+
+                ResultUI(result, "potential");
+            }
+        });
+
+        potentialPanel.setLayout(new FlowLayout());
+
+        // Add components to kineticPanel
+        potentialPanel.add(firstValueLabel);
+        potentialPanel.add(firstValue);
+
+        potentialPanel.add(secondValueLabel);
+        potentialPanel.add(secondValue);
+
+        potentialPanel.add(calculateBtn);
+
+        // Add potentialPanel to mainFrame
+        potentialPanel.setLayout(new FlowLayout());
+        mainFrame.add(potentialPanel);
+        mainFrame.setLayout(new GridLayout(4, 1));
+
+        // Display potentialPanel
+        potentialPanel.setVisible(true);
+    }
+
     public void ResultUI(Float result, String invoker) {
         pageHeading.setText("Results:");
 
@@ -149,8 +211,13 @@ public class UI extends Physics {
             String stringResult = Float.toString(result) + " m/s square";
             resultLabel = new JLabel(stringResult);
         }
+        if (invoker == "potential") {
+            potentialPanel.setVisible(false);
+            String stringResult = Float.toString(result) + " Joules";
+            resultLabel = new JLabel(stringResult);
+        }
 
-        resultCloseBtn = new JButton("Close");
+        resultCloseBtn = new JButton("CLOSE");
         resultPanel.add(resultLabel);
         resultPanel.add(resultCloseBtn);
         resultPanel.setLayout(new FlowLayout());
