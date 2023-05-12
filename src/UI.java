@@ -150,6 +150,7 @@ public class UI extends Physics {
             resultLabel = new JLabel(stringResult);
         }
 
+        resultCloseBtn = new JButton("Close");
         resultPanel.add(resultLabel);
         resultPanel.add(resultCloseBtn);
         resultPanel.setLayout(new FlowLayout());
