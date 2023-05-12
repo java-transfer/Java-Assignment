@@ -37,6 +37,7 @@ public class UI extends Physics {
     JButton kineticBtn;
     JButton potentialBtn;
     JButton momentumBtn;
+    JButton workdoneBtn;
 
     // Result components
     JLabel resultLabel;
@@ -49,6 +50,9 @@ public class UI extends Physics {
 
     // Potential page components
     final JPanel potentialPanel = new JPanel();
+
+    // Workdone page components
+    final JPanel workdonePanel = new JPanel();
 
     // Result page components
     final JPanel resultPanel = new JPanel();
@@ -65,6 +69,7 @@ public class UI extends Physics {
         kineticBtn = new JButton("Kinetic Energy");
         potentialBtn = new JButton("Potential Energy");
         momentumBtn = new JButton("Linear Momentum");
+        workdoneBtn = new JButton("Work Done");
 
         // Add components functionality
         kineticBtn.addActionListener(new ActionListener() {
@@ -78,11 +83,17 @@ public class UI extends Physics {
                 PotentialUI();
             }
         });
+        workdoneBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                WorkdoneUI();
+            }
+        });
 
         // Add components to mainOptionsPanel
         mainOptionPanel.add(kineticBtn);
         mainOptionPanel.add(potentialBtn);
         mainOptionPanel.add(momentumBtn);
+        mainOptionPanel.add(workdoneBtn);
 
         // Add panels to the mainFrame
         mainFrame.add(pageHeading);
@@ -149,8 +160,9 @@ public class UI extends Physics {
         // Display kineticPanel
         kineticPanel.setVisible(true);
     }
-
+        // Display potential page
     public void PotentialUI() {
+        
 
         // Hide mainOptionPanel & set new heading
         mainOptionPanel.setVisible(false);
@@ -175,9 +187,9 @@ public class UI extends Physics {
                 String massString = firstValue.getText();
                 Float mass = Float.parseFloat(massString);
 
-                String velocityString = secondValue.getText();
-                Float velocity = Float.parseFloat(velocityString);
-                Float result = physics.getPotentialEnergy(mass, velocity);
+                String heightString = secondValue.getText();
+                Float height = Float.parseFloat(heightString);
+                Float result = physics.getPotentialEnergy(mass, height);
 
                 ResultUI(result, "potential");
             }
@@ -185,7 +197,7 @@ public class UI extends Physics {
 
         potentialPanel.setLayout(new FlowLayout());
 
-        // Add components to kineticPanel
+        // Add components to potentialPanel
         potentialPanel.add(firstValueLabel);
         potentialPanel.add(firstValue);
 
@@ -202,8 +214,71 @@ public class UI extends Physics {
         // Display potentialPanel
         potentialPanel.setVisible(true);
     }
+        // Display workdone page
+        public void WorkdoneUI() {
 
-    public void ResultUI(Float result, String invoker) {
+            // Hide mainOptionPanel & set new heading
+            mainOptionPanel.setVisible(false);
+    
+            pageHeading.setText("Please provide values:");
+    
+            // Define components (3 textField & 1 Button)
+            firstValueLabel = new JLabel("Mass (g)");
+            firstValue = new JTextField("", 3);
+            firstValue.setPreferredSize(new Dimension(5, 25));
+    
+            secondValueLabel = new JLabel("Acceleration (m/s^2)");
+            secondValue = new JTextField("", 3);
+            secondValue.setPreferredSize(new Dimension(5, 25));
+
+            thirdValueLabel = new JLabel("Distance (m)");
+            thirdValue = new JTextField("", 3);
+            thirdValue.setPreferredSize(new Dimension(5, 25));
+    
+            calculateBtn = new JButton("CALCULATE");
+            calculateBtn.setPreferredSize(new Dimension(120, 25));
+    
+            // Perform calculation
+            calculateBtn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    String massString = firstValue.getText();
+                    Float mass = Float.parseFloat(massString);
+    
+                    String accelerationString = secondValue.getText();
+                    Float acceleration = Float.parseFloat(accelerationString);
+
+                    String distanceString = thirdValue.getText();
+                    Float distance = Float.parseFloat(distanceString);
+                    Float result = physics.getWorkdone(mass, acceleration, distance);
+    
+                    ResultUI(result, "Workdone");
+                }
+            });
+    
+            workdonePanel.setLayout(new FlowLayout());
+    
+            // Add components to workdonePanel
+            workdonePanel.add(firstValueLabel);
+            workdonePanel.add(firstValue);
+    
+            workdonePanel.add(secondValueLabel);
+            workdonePanel.add(secondValue);
+
+            workdonePanel.add(thirdValueLabel);
+            workdonePanel.add(thirdValue);
+    
+            workdonePanel.add(calculateBtn);
+    
+            // Add workdonePanel to mainFrame
+            workdonePanel.setLayout(new FlowLayout());
+            mainFrame.add(workdonePanel);
+            mainFrame.setLayout(new GridLayout(4, 1));
+    
+            // Display workdonePanel
+            workdonePanel.setVisible(true);
+        }
+   
+        public void ResultUI(Float result, String invoker) {
         pageHeading.setText("Results:");
 
         if (invoker == "kinetic") {
@@ -213,6 +288,11 @@ public class UI extends Physics {
         }
         if (invoker == "potential") {
             potentialPanel.setVisible(false);
+            String stringResult = Float.toString(result) + " Joules";
+            resultLabel = new JLabel(stringResult);
+        }
+        if (invoker == "workdone") {
+            workdonePanel.setVisible(false);
             String stringResult = Float.toString(result) + " Joules";
             resultLabel = new JLabel(stringResult);
         }

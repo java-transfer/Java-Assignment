@@ -12,4 +12,9 @@ public class Physics extends Functions {
         return result;
     }
 
+    Float getWorkdone(float mass, float acceleration, float distance) {
+        Float result = multiplyThree(mass, acceleration, distance);
+        return result;
+    }
+
 }
