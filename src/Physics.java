@@ -7,8 +7,13 @@ public class Physics extends Functions {
         return result;
     }
 
+    Float getLinearMomentum(float mass, float velocity) {
+        Float result = multiply(mass, velocity);
+        return result;
+    }
+
     Float getPotentialEnergy(float mass, float height) {
-       Float result = multiply(mass, 10) * height;
+        Float result = multiply(mass, 10) * height;
         return result;
     }
 
