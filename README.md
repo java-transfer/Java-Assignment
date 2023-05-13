@@ -10,7 +10,9 @@ Favour Charles Bassey - BHU/22/04/09/0091
 
 Daniel Precious Owlama- BHU/22/04/09/0070
 
- Adewale Oreoluwa Oluwabusayomi- BHU/22/04/05/0121
+Adewale Oreoluwa Oluwabusayomi- BHU/22/04/05/0121
+
+Mbegbu David Chidera - BHU/22/04/05/0111
 
 
 ### Project Brief
