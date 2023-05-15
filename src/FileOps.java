@@ -23,7 +23,7 @@ public class FileOps {
 
     public void appendData(String data) {
         try {
-            File myFile = new File("test.txt");
+            File myFile = new File("calcHistory.txt");
             FileWriter fileWriter = new FileWriter(myFile);
 
             BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
