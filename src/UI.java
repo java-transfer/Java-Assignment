@@ -32,6 +32,7 @@ public class UI extends Physics {
 
     // Functions
     Physics physics = new Physics();
+    FileOps fileOps = new FileOps();
 
     // Main page components
     JButton kineticBtn;
@@ -148,6 +149,8 @@ public class UI extends Physics {
                 Float result = physics.getKineticEnergy(mass, velocity);
 
                 ResultUI(result, "kinetic");
+                fileOps.appendData("Using a mass of: " + massString + " and velocity of: " + velocityString
+                        + "\nKinetic energy was equal to " + result + " m/s sq \n\n");
             }
         });
 
@@ -199,6 +202,8 @@ public class UI extends Physics {
                 Float result = physics.getLinearMomentum(mass, velocity);
 
                 ResultUI(result, "linear");
+                fileOps.appendData("Using a mass of: " + massString + " and velocity of: " + velocityString
+                        + "\nLinear momentum was equal to " + result + " Joules \n\n");
             }
         });
 
@@ -251,6 +256,8 @@ public class UI extends Physics {
                 Float result = physics.getPotentialEnergy(mass, height);
 
                 ResultUI(result, "potential");
+                fileOps.appendData("Using a mass of: " + massString + " and height of: " + heightString
+                        + "\nPotential energy was equal to " + result + " m/s sq \n\n");
             }
         });
 
@@ -312,6 +319,9 @@ public class UI extends Physics {
                 Float result = physics.getWorkdone(mass, acceleration, distance);
 
                 ResultUI(result, "Workdone");
+                fileOps.appendData("Using a mass of: " + massString + ", acceleration of: " + accelerationString
+                        + "\n and distance of " + distanceString
+                        + "\nWork done was equal to " + result + " KJ \n\n");
             }
         });
 
