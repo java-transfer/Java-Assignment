@@ -17,7 +17,7 @@ public class FileOps {
             writeToFile.close();
 
         } catch (IOException ioException) {
-            System.out.println("Cannot save this file");
+            System.out.println("This file cannot be saved");
         }
     }
 

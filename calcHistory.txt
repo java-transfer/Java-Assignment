@@ -1,4 +1,2 @@
-Using a mass of: 76 and velocity of: 2
-Kinetic energy was equal to 152.0 m/s sq 
-
-
+kinetic Operation was perfomed
+Results were: 31790.0
