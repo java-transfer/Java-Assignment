@@ -1,0 +1,4 @@
+Using a mass of: 76 and velocity of: 2
+Kinetic energy was equal to 152.0 m/s sq 
+
+

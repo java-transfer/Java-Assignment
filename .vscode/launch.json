@@ -9,6 +9,13 @@
       "name": "OOPMain",
       "request": "launch",
       "mainClass": "src.OOPMain",
+      "projectName": "Assignment - physics_3b4736c"
+    },
+    {
+      "type": "java",
+      "name": "OOPMain",
+      "request": "launch",
+      "mainClass": "src.OOPMain",
       "projectName": "Java-Assignment_2f5ced"
     },
     {
